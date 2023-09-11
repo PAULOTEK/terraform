@@ -7,7 +7,12 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.0.0"
+    }
   }
+
 }
 
 provider "aws" {
@@ -18,4 +23,9 @@ provider "aws" {
       managed-by = "terraform"
     }
   }
+}
+
+provider "azurerm" {
+  skip_provider_registration = true
+  features {}
 }
