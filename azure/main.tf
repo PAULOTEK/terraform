@@ -8,6 +8,12 @@ terraform {
       version = "=3.0.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name = "remote-state"
+    storage_account_name = "pauloalexandrestorageaccount"
+    container_name = "remote-state"
+    key = "azure-vnet"
+  }
 }
 
 provider "azurerm" {

@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "first_resource_group" {
-  name     = ""
+  name     = "remote-state"
   location = var.location
 
   tags = local.common_tags
@@ -16,6 +16,6 @@ resource "azurerm_storage_account" "first_storage_account" {
 }
 
 data "azurerm_storage_container" "first_container" {
-  name                 = "imagens"
+  name                 = "remote-state"
   storage_account_name = azurerm_storage_account.first_storage_account.name
 }
